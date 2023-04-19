@@ -8,14 +8,14 @@ export default async function Home() {
   return (
     <div>
       <h1 className='text-7xl font-extrabold'>
-        Hello I'm{" "}
+        Hello I&#39;m{" "}
         <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
           Christian
         </span>
         !
       </h1>
       <p className="mt-3 text-xl text-gray-600">
-        I'm a full-stack developer and designer from the US.
+        I&#39;m a full-stack developer and designer from the US.
       </p>
       <h2 className="mt-20 font-bold text-gray-700 text-3xl">
         Projects

@@ -3,7 +3,7 @@ import '../globals.css'
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Christian\'s Portfolio',
+  title: 'Christians Portfolio',
   description: 'Portfolio of Christian',
 }
 
@@ -28,7 +28,7 @@ export default async function RootLayout({
           </Link>
           <div className='flex items-center gap-3'>
             {pages.map((page) => (
-              <Link href={`/${page.slug}`} key={page._id}>
+              <Link href={`/${page.slug}`} key={page._id} className='hover:underline'>
                 {page.title}
               </Link>
             ))}
