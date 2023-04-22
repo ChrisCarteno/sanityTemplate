@@ -1,5 +1,6 @@
 import { getPages } from '@/sanity/sanity-utils';
-import '../globals.css'
+import '../globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link';
 
 export const metadata = {
@@ -39,7 +40,9 @@ export default async function RootLayout({
 
 
         <main className='py-10'>{children}</main>
+        
       </body>
+      <Analytics />
     </html>
   )
 }
