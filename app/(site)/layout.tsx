@@ -1,8 +1,6 @@
 import { getPages } from '@/sanity/sanity-utils';
 import '../globals.css'
 import Link from 'next/link';
-import Image from 'next/image';
-import { Flex, Box, Text, Button } from '@chakra-ui/react';
 
 export const metadata = {
   title: 'Christians Portfolio',
@@ -40,9 +38,7 @@ export default async function RootLayout({
           </div>
 
         </header>
-        <Flex flexWrap="wrap" alignItems="center" justifyContent="center" m="10" bg="gray.100" >
-            some text here
-        </Flex>
+
         <main className='py-10'>{children}</main>
       </body>
     </html>
