@@ -1,5 +1,32 @@
+"use client";
 
+import Link from 'next/link';
+import Image from 'next/image';
+import { Flex, Box, Text, Button} from '@chakra-ui/react';
+type PurposeProps = {
+    purpose: string;
+};
 
+const Banner: React.FunctionComponent<PurposeProps> = ( props ) => {
+    const {purpose} = props;
+
+    return (
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
+        {purpose}
+    </Flex>
+    )
+}
+
+export default function Header() {
+    return (
+        <div>
+            <h1>I am Christian</h1>
+            <Banner purpose={'for sale'}/>
+
+        </div>
+    )
+
+}
 
 
 
