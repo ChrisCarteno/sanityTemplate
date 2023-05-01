@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getProjects } from '@/sanity/sanity-utils';
 import Link from 'next/link';
-import Banners from './components/banners';
+
 export default async function Home() {
 
   const projects = await getProjects();
@@ -36,7 +36,7 @@ export default async function Home() {
         </Link>
         ))}
       </div>
-      <Banners />
+
     </div>
   )
 }

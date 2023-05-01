@@ -1,11 +1,19 @@
 import '../globals.css'
 import Link from 'next/link';
 import { getPages } from '@/sanity/sanity-utils';
+import { Nunito_Sans } from 'next/font/google';
+
 export const metadata = {
   title: 'Christians Portfolio',
   description: 'Portfolio of Christian',
+  keywords: 'portfolio, christian, web developer, designer',
 }
 
+
+const nunito = Nunito_Sans({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+});
 
 
 export default async function RootLayout({
@@ -19,7 +27,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className='max-w-3xl mx-auto py-20'>
+      <body className={'max-w-3xl mx-auto py-20 ' + nunito.className}>
       <header className='flex items-center justify-between'>
         <Link href="/"
         className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
