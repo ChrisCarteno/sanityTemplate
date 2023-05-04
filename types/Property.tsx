@@ -9,6 +9,6 @@ export type Property = {
     price: number;
     bedrooms: number;
     bathrooms: number;
-    url: string;
+    squareFeet: number;
     content: PortableTextBlock[];
 }

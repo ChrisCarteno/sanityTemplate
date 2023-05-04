@@ -28,9 +28,9 @@ const property = {
             ]
         },
         {
-            name: 'url',
-            title: 'URL',
-            type: 'url',
+            name: 'squareFeet',
+            title: 'Square Feet',
+            type: 'number'
         },
         {
             name: 'price',
