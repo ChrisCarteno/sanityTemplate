@@ -33,6 +33,22 @@ const property = {
             type: 'url',
         },
         {
+            name: 'price',
+            title: 'Price',
+            type: 'number'
+        },
+        {
+            name: 'bedrooms',
+            title: 'Bedrooms',
+            type: 'number'
+        },
+        {
+            name: 'bathrooms',
+            title: 'Bathrooms',
+            type: 'number'
+        }
+        ,
+        {
             name: 'content',
             title: 'Content',
             type: 'array',
