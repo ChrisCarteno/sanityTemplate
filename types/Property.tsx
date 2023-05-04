@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type Project = {
+export type Property = {
     _id: string;
     _createdAt: Date;
     name: string;
@@ -12,4 +12,3 @@ export type Project = {
     url: string;
     content: PortableTextBlock[];
 }
-
