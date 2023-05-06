@@ -9,7 +9,7 @@ export default async function Home() {
     <div>
       <h1 className='text-7xl font-extrabold'>
         <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
-          Chrispy's
+          Chrispy&#39;s
         </span>
         {' '}Real Estate!
       </h1>
