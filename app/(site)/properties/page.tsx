@@ -1,21 +1,15 @@
 import Image from 'next/image';
 import { getProperties } from '@/sanity/sanity-utils';
 import Link from 'next/link';
+import { BiBed, BiBath, BiDollarCircle} from 'react-icons/bi';
 
 export default async function Home() {
 
   const properties = await getProperties();
+  const formatter = Intl.NumberFormat('en-US', {notation: 'compact', style: 'currency', currency: 'USD'});
+
   return (
     <div>
-      <h1 className='text-7xl font-extrabold'>
-        <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
-          Chrispy&#39;s
-        </span>
-        {' '}Real Estate!
-      </h1>
-      <p className="mt-3 text-xl text-gray-600">
-        Let me help you buy or sell a home.
-      </p>
       <h2 className="mt-10 font-bold text-gray-700 text-3xl">
         Properties
       </h2>
@@ -32,6 +26,7 @@ export default async function Home() {
           <div className="mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
             {property.name}
           </div>
+          <div className="flex"> {formatter.format(property.price) + '    '} {property.bedrooms} <BiBed/>   {property.bathrooms} <BiBath/></div>
         </Link>
         ))}
       </div>

@@ -1,7 +1,8 @@
 import { createClient, groq } from "next-sanity";
 import { Project } from "@/types/Project";
-import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Property } from "@/types/Property";
+import clientConfig from "./config/client-config";
 
 export async function getProjects(): Promise<Project[]> {
 
@@ -60,3 +61,40 @@ export async function getPage(slug: string): Promise<Page> {
     { slug }
   )
 }
+
+export async function getProperties(): Promise<Property[]> {
+
+  return createClient(clientConfig).fetch(
+        groq`*[_type == "property"]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+            squareFeet,
+            content,
+            price,
+            bedrooms,
+            bathrooms
+        }`
+    )
+  }
+  
+  export async function getProperty(slug: string): Promise<Property> {
+  
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "property" && slug.current == $slug][0]{
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        "image": image.asset->url,
+        squareFeet,
+        content,
+        price,
+        bedrooms,
+        bathrooms
+    }`
+    , { slug }
+  );
+  }
