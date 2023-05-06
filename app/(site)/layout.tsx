@@ -1,6 +1,5 @@
 import '../globals.css'
 import Link from 'next/link';
-import { getPages } from '@/sanity/sanity-utils';
 import { Nunito_Sans } from 'next/font/google';
 
 export const metadata = {
@@ -21,10 +20,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-  const pages = await getPages();
-
-
+  
+  
+  
   return (
     <html lang="en">
       <body className={'max-w-3xl mx-auto py-20 ' + nunito.className}>
@@ -36,13 +34,10 @@ export default async function RootLayout({
         </svg>
         </Link>
         <div className='flex items-center gap-3'>
-        {pages.map((page) => (
-            <Link href={`/${page.slug}`} key={page._id} className='hover:underline'>
-            {page.title}
-            </Link>
-        ))}
+        <Link href={'/properties'} className='hover:underline'>
+            Properties
+        </Link>
         </div>
-
         </header>
         <main className='py-10'>
           {children}
@@ -51,3 +46,11 @@ export default async function RootLayout({
     </html>
   )
 }
+
+// import { getPages } from '@/sanity/sanity-utils';
+// const pages = await getPages();
+// {pages.map((page) => (
+  //     <Link href={`/${page.slug}`} key={page._id} className='hover:underline'>
+  //     {page.title}
+  //     </Link>
+// ))}
