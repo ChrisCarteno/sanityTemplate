@@ -14,7 +14,7 @@ export default async function Home() {
         {' '}Real Estate!
       </h1>
       <p className="mt-3 text-xl text-gray-600">
-        I&#39;m can help you buy or sell a home.
+        Let me help you buy or sell a home.
       </p>
       <h2 className="mt-10 font-bold text-gray-700 text-3xl">
         Properties

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getProperties } from '@/sanity/sanity-utils';
 import Link from 'next/link';
+import { BiBed, BiBath, BiDollarCircle} from 'react-icons/bi';
 
 export default async function Home() {
 
@@ -23,6 +24,7 @@ export default async function Home() {
           <div className="mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
             {property.name}
           </div>
+          <div className="flex"> {property.price} <BiDollarCircle/> {property.bedrooms} <BiBed/>   {property.bathrooms} <BiBath/></div>
         </Link>
         ))}
       </div>
