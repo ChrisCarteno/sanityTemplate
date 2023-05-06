@@ -1,4 +1,7 @@
-import '../globals.css'
+import { getPages } from '@/sanity/sanity-utils';
+import '../globals.css';
+import { Analytics } from '@vercel/analytics/react';
+
 import Link from 'next/link';
 import { Nunito_Sans } from 'next/font/google';
 
@@ -39,6 +42,7 @@ export default async function RootLayout({
         </Link>
         </div>
         </header>
+
         <main className='py-10'>
           {children}
         </main>
@@ -54,8 +58,10 @@ export default async function RootLayout({
               </li>
           </ul>
           </div>
-        </footer>
+        </footer>       
+
       </body>
+      <Analytics />
     </html>
   )
 }
