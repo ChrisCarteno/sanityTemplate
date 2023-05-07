@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getProperties } from '@/sanity/sanity-utils';
 import Link from 'next/link';
-import { BiBed, BiBath, BiDollarCircle} from 'react-icons/bi';
+import { BiBed, BiBath} from 'react-icons/bi';
 
 export default async function Home() {
 

@@ -1,4 +1,3 @@
-import { getPages } from '@/sanity/sanity-utils';
 import '../globals.css';
 import { Analytics } from '@vercel/analytics/react';
 
