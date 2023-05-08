@@ -29,7 +29,7 @@ export default async function Home() {
           <div className="flex"> {formatter.format(property.price) + '    '} {property.bedrooms} <BiBed/>   {property.bathrooms} <BiBath/></div>
         </Link>
         ))}
-      </div>
+pp      </div>
 
     </div>
   )
