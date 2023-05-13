@@ -5,13 +5,15 @@ import {useState } from 'react';
 
 export default function ContactUs() {
 
-    const [count, setCount] = useState(0);
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+    }
 
     return (
         <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Click me</button>
-            <form
+
+        <form method='post' onSubmit={handleSubmit}
             className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
             >
             <h1 className="text-2xl font-bold dark:text-gray-50">
@@ -28,7 +30,7 @@ export default function ContactUs() {
                 name="fullname"
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             />
-            
+
 
             <label
                 htmlFor="email"
@@ -41,7 +43,7 @@ export default function ContactUs() {
                 name="email"
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             />
-            
+
 
             <label
                 htmlFor="subject"
@@ -54,7 +56,7 @@ export default function ContactUs() {
                 name="subject"
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             />
-            
+
             <label
                 htmlFor="message"
                 className="text-gray-500 font-light mt-4 dark:text-gray-50"
@@ -65,7 +67,7 @@ export default function ContactUs() {
                 name="message"
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             ></textarea>
-            
+
             <div className="flex flex-row items-center justify-start">
                 <button
                 type="submit"
@@ -74,10 +76,7 @@ export default function ContactUs() {
                 Submit
                 </button>
             </div>
-            </form>
-
-
-
-        </div>
+        </form>
+    </div>
     )
 }
