@@ -7,7 +7,12 @@ export default function ContactUs() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData(e.target);
+        const formData = {}
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if (!field.name) return;
+            formData[field.name] = field.value;
+        });
+        console.log(formData);
     }
 
     return (
