@@ -1,9 +1,4 @@
-export async function GET(request: Request){
-    return new Response("Hello World!", {status: 200})
-}
-
-// import { NextResponse } from 'next/server';
- 
+import { NextResponse } from 'next/server';
 // export async function GET() {
 //   const res = await fetch('https://data.mongodb-api.com/...', {
 //     headers: {
@@ -15,6 +10,17 @@ export async function GET(request: Request){
  
 //   return NextResponse.json({ data });
 // }
+
+
+
+export async function GET(){
+  return NextResponse.json({ "message" : "Hello World!"})
+}
+
+
+
+
+
 // import sendgrid from "@sendgrid/mail";
 
 // sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
