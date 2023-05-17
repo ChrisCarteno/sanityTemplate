@@ -1,23 +1,51 @@
 'use client';
 
-import {useState } from 'react';
+import {useState, FormEvent, ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
+const initState = {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+}
 
 export default function ContactUs() {
-
-    async function handleSubmit(e) {
+    const [data, setData] = useState(initState);
+    const router = useRouter();
+    
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const formData = {}
-        Array.from(e.currentTarget.elements).forEach(field => {
-            if (!field.name) return;
-            formData[field.name] = field.value;
+        console.log(JSON.stringify(data));
+        const { name, email, subject, message } = data;
+        
+        const res = await fetch('/api/sendGrid', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, subject, message }),
         });
-        console.log(formData);
+
+        const result = await res.json();
+        console.log('result: ', result);
+
+        //Navigate to Thank You Page
+        router.push('/thank-you');
     }
 
-    return (
-        <div>
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const name = e.target.name;
 
+        setData( prevData => ({
+            ...prevData,
+            [name]: e.target.value,
+        }))
+    }
+
+    const canSave = [...Object.values(data)].every(Boolean);
+
+    return (
         <form method='post' onSubmit={handleSubmit}
             className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
             >
@@ -82,6 +110,5 @@ export default function ContactUs() {
                 </button>
             </div>
         </form>
-    </div>
     )
 }
