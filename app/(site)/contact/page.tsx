@@ -46,20 +46,20 @@ export default function ContactUs() {
     const canSave = [...Object.values(data)].every(Boolean);
 
     return (
-        <form onSubmit={handleSubmit} className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500">
-            <h1 className="text-2xl font-bold dark:text-gray-50">
+        <form onSubmit={handleSubmit} className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white">
+            <h1 className="text-2xl font-bold">
                 Contact Us
             </h1>
 
-            <label htmlFor="fullname" className="text-gray-500 font-light mt-8 dark:text-gray-50">
-                Full name<span className="text-red-500 dark:text-gray-50">*</span>
+            <label htmlFor="fullname" className="text-gray-500 font-light mt-8">
+                Full name<span className="text-red-500">*</span>
             </label>
             <input name="fullname" type="text" id="name" placeholder='Full Name' pattern="/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/"
                 value={data.fullname} onChange={handleChange}
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             />
 
-            <label htmlFor="email" className="text-gray-500 font-light mt-4 dark:text-gray-50" >
+            <label htmlFor="email" className="text-gray-500 font-light mt-4" >
                 E-mail<span className="text-red-500">*</span>
             </label>
             <input type="email" name="email" id="email" placeholder='Email Address' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
@@ -68,7 +68,7 @@ export default function ContactUs() {
             />
 
 
-            <label htmlFor="subject" className="text-gray-500 font-light mt-4 dark:text-gray-50" >
+            <label htmlFor="subject" className="text-gray-500 font-light mt-4" >
                 Subject<span className="text-red-500">*</span>
             </label>
             <input type="text" name="subject" id="subject" placeholder='Subject' maxLength={150} pattern="/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/"
@@ -76,7 +76,7 @@ export default function ContactUs() {
                 className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
             />
 
-            <label htmlFor="message" className="text-gray-500 font-light mt-4 dark:text-gray-50" >
+            <label htmlFor="message" className="text-gray-500 font-light mt-4" >
                 Message<span className="text-red-500">*</span>
             </label>
             <textarea name="message" id='message' placeholder='Write Message Here' rows={5} cols={50} maxLength={500}
