@@ -11,4 +11,13 @@ export type Property = {
     bathrooms: number;
     squareFeet: number;
     content: PortableTextBlock[];
+    images: {
+        _key: string;
+        _type: string;
+        alt: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        }
+    }[];
 }

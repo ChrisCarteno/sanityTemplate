@@ -101,21 +101,6 @@ const property = {
             description: 'Should we enable zooming of images?',
           },
     ],
-    preview: {
-        select: {
-          images: 'images',
-          image: 'images.0',
-        },
-        prepare(selection : any) {
-          const { images, image } = selection;
-    
-          return {
-            title: `Gallery block of ${Object.keys(images).length} images`,
-            subtitle: `Alt text: ${image.alt}`,
-            media: image,
-          };
-        },
-      },
 }
 
 export default property;
