@@ -19,9 +19,7 @@ export default async function Home() {
       <h2 className="mt-10 font-bold text-gray-700 text-3xl">
         Properties
       </h2>
-      <div className="mt-5">
 
-      </div>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {properties.map((property) => (
         <Link className='border-2 border-gray-500 rounded-lg p-2 hover:scale-105 hover:border-blue-500 transition' href={`/properties/${property.slug}`}
